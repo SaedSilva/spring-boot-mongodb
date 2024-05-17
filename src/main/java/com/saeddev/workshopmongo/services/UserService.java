@@ -26,6 +26,10 @@ public class UserService {
     public User insert (User user) {
         return repository.insert(user);
     }
+    public void Delete (String id) {
+        findById(id);
+        repository.deleteById(id);
+    }
 
     public User fromDTO (UserDTO userDTO) {
         return new User(userDTO.getId(), userDTO.getName(), userDTO.getEmail());
